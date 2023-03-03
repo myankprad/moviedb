@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Movie from './components/Movie';
+import MovieList from './components/MovieList';
 
 function App() {
   const [movies, setMovies] = useState([])
  
   const getMovieRequest = async () =>{
-    const url = "http://www.omdbapi.com/?s=avtar&apikey=66a38003"
+    const url = "http://www.omdbapi.com/?s=avengers&apikey=66a38003"
 
     const response = await fetch(url);
      const responeJson = await response.json();
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="container-fluid movie-app">
      <div className='row'>
-     <Movie movies={movies} />
+     <MovieList movies={movies} />
      </div>
     </div>
   );
