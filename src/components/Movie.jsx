@@ -37,11 +37,45 @@ const MovieInfo = styled.span`
   text-transform: capitalize;
   text-overflow: ellipsis;
 `;
+const Header = styled.div`
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px 0 #555;
+`;
+
+const Box = styled.div`
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+`
+const Head = styled.div`
+width: 100%;
+font-sixe: 10px;
+background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center ;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin-top:50px;
+  text-aling:center;
+  box-shadow: 0 3px 6px 0 #555;
+
+`
 
 
 const Movie = ({Poster, Title, Year, Type, imdbID, props}) => {
   return (
     <>
+    <Box>
     <MovieContainer onClick={()=>props.onMovieSelect(imdbID)}>
     <CoverImage src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"/>
    <MovieName>Avengers: Endgame</MovieName>
@@ -81,7 +115,13 @@ const Movie = ({Poster, Title, Year, Type, imdbID, props}) => {
    </InfoColumn>
     </MovieContainer>
 
+    </Box>
 
+    <Head>
+        Developer : Mayank Pradhan 
+    </Head>
+    
+     
     
     </>
   )
